@@ -3,7 +3,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 // Library version used when deploying the artifact
-version = "0.1.2"
+version = "0.2.0"
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -26,6 +26,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
+    compile project(':IMKit')
 }
 
 def siteUrl = "https://github.com/Anchorer/Lib_dayi"
