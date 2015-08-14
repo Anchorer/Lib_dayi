@@ -1,1 +1,1 @@
-include ':app', ':DayiLib', ':IMKit'
+include ':app', ':DayiLib'
