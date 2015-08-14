@@ -3,7 +3,7 @@ package im.dayi.app.library.core;
 /**
  * Created by Anchorer/duruixue on 2015/8/14.
  */
-public class AppConfig {
+public class LibConfig {
     /**
      * LOG
      */

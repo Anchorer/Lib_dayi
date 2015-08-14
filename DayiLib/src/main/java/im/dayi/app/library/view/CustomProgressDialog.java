@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.anchorer.lib.utils.L;
 
 import im.dayi.app.library.R;
-import im.dayi.app.library.core.AppConfig;
+import im.dayi.app.library.core.LibConfig;
 import im.dayi.app.library.util.SystemUtils;
 
 /**
@@ -82,7 +82,7 @@ public class CustomProgressDialog extends Dialog {
             try {
                 customProgressDialog.show();
             } catch (Exception e) {
-                L.e(AppConfig.LOG, "CustomProgressDialog show Exception", e);
+                L.e(LibConfig.LOG, "CustomProgressDialog show Exception", e);
             }
         }
     }
@@ -98,7 +98,7 @@ public class CustomProgressDialog extends Dialog {
                 customProgressDialog.dismiss();
             }
         } catch (Exception e) {
-            L.e(AppConfig.LOG, "CustomProgressDialog hide Exception.", e);
+            L.e(LibConfig.LOG, "CustomProgressDialog hide Exception.", e);
         } finally {
             customProgressDialog = null;
         }

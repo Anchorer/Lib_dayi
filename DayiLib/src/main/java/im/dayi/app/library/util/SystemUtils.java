@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import im.dayi.app.library.core.AppConfig;
+import im.dayi.app.library.core.LibConfig;
 
 /**
  * Utility: SystemUtils
@@ -38,7 +38,7 @@ public class SystemUtils {
             is.close();
             return new String(buffer, "UTF-8");
         } catch (IOException e) {
-            L.e(AppConfig.LOG, "ReadFromAssets Exception", e);
+            L.e(LibConfig.LOG, "ReadFromAssets Exception", e);
         }
         return "";
     }
