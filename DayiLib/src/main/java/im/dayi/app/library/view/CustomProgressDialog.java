@@ -79,7 +79,11 @@ public class CustomProgressDialog extends Dialog {
             if (!TextUtils.isEmpty(loadingText)) {
                 customProgressDialog.setMessage(loadingText);
             }
-            customProgressDialog.show();
+            try {
+                customProgressDialog.show();
+            } catch (Exception e) {
+                L.e(AppConfig.LOG, "CustomProgressDialog show Exception", e);
+            }
         }
     }
 
