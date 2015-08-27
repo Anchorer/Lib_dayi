@@ -3,10 +3,7 @@ package im.dayi.app.library.view;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
-import android.text.TextUtils;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.anchorer.lib.utils.L;
 
@@ -59,11 +56,6 @@ public class CustomProgressDialog extends Dialog {
      * @author wragony
      */
     private CustomProgressDialog setMessage(String strMessage) {
-        TextView tvMsg = (TextView) customProgressDialog.findViewById(R.id.loading_tip);
-        if (tvMsg != null) {
-            tvMsg.setText(strMessage);
-            tvMsg.setVisibility(View.VISIBLE);
-        }
         return customProgressDialog;
     }
 
@@ -76,9 +68,6 @@ public class CustomProgressDialog extends Dialog {
     public static void showProgressDialog(Context context, boolean cancelable, String loadingText) {
         if (SystemUtils.isActivityRunning(context)) {
             customProgressDialog = CustomProgressDialog.createDialog(context, cancelable);
-            if (!TextUtils.isEmpty(loadingText)) {
-                customProgressDialog.setMessage(loadingText);
-            }
             try {
                 customProgressDialog.show();
             } catch (Exception e) {

@@ -1,1 +1,1 @@
-include ':app', ':DayiLib'
+include ':DayiLib', ':example'
