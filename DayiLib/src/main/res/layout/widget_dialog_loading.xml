@@ -8,4 +8,39 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@anim/widget_loading_progress_round" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/widget_dialog_loading_image"
+        android:layout_alignRight="@+id/widget_dialog_loading_image"
+        android:layout_alignTop="@+id/widget_dialog_loading_image"
+        android:layout_alignBottom="@+id/widget_dialog_loading_image">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.47"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="0.53">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.41"/>
+            <TextView
+                android:id="@+id/widget_dialog_loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.59"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="10dp"
+                android:gravity="top"
+                android:text="@string/dayi_lib_loading_text"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

@@ -3,7 +3,10 @@ package im.dayi.app.library.view;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.anchorer.lib.utils.L;
 
@@ -56,18 +59,26 @@ public class CustomProgressDialog extends Dialog {
      * @author wragony
      */
     private CustomProgressDialog setMessage(String strMessage) {
+        if (customProgressDialog != null) {
+            TextView textView = (TextView) customProgressDialog.findViewById(R.id.widget_dialog_loading_text);
+            if (textView != null) {
+                textView.setText(strMessage);
+                textView.setVisibility(View.VISIBLE);
+            }
+        }
         return customProgressDialog;
     }
 
     /**
      * 显示加载对话框
-     *
      * @param context
-     * @author wragony
      */
     public static void showProgressDialog(Context context, boolean cancelable, String loadingText) {
-        if (SystemUtils.isActivityRunning(context)) {
+        if (context != null && SystemUtils.isActivityRunning(context)) {
             customProgressDialog = CustomProgressDialog.createDialog(context, cancelable);
+            if (!TextUtils.isEmpty(loadingText)) {
+                customProgressDialog.setMessage(loadingText);
+            }
             try {
                 customProgressDialog.show();
             } catch (Exception e) {
@@ -78,8 +89,6 @@ public class CustomProgressDialog extends Dialog {
 
     /**
      * 隐藏加载对话框
-     *
-     * @author wragony
      */
     public static void hideProgressDialog() {
         try {

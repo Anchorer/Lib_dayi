@@ -15,13 +15,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btn = (Button) findViewById(R.id.main_btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CustomProgressDialog.showProgressDialog(MainActivity.this, true, "");
-            }
-        });
+        Button btn1 = (Button) findViewById(R.id.main_btn1);
+        Button btn2 = (Button) findViewById(R.id.main_btn2);
+        Button btn3 = (Button) findViewById(R.id.main_btn3);
+        Button btn4 = (Button) findViewById(R.id.main_btn4);
+        btn1.setOnClickListener(new ShowDialogListener(btn1.getText().toString()));
+        btn2.setOnClickListener(new ShowDialogListener(btn2.getText().toString()));
+        btn3.setOnClickListener(new ShowDialogListener(btn3.getText().toString()));
+        btn4.setOnClickListener(new ShowDialogListener(btn4.getText().toString()));
+    }
+
+    class ShowDialogListener implements View.OnClickListener {
+        private String text;
+        public ShowDialogListener(String text) {
+            this.text = text;
+        }
+        @Override
+        public void onClick(View v) {
+            CustomProgressDialog.showProgressDialog(MainActivity.this, true, text);
+        }
     }
 
     @Override

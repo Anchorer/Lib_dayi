@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DayiLib</string>
+
+    <string name="dayi_lib_loading_text">正在加载</string>
 </resources>
