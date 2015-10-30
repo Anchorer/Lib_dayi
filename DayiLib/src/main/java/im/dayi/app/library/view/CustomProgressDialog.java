@@ -36,7 +36,9 @@ public class CustomProgressDialog extends Dialog {
 
     private static CustomProgressDialog createDialog(Context context, boolean cancelable) {
         customProgressDialog = new CustomProgressDialog(context, R.style.customProgressDialog);
-        customProgressDialog.setContentView(R.layout.widget_dialog_loading);
+        try {
+            customProgressDialog.setContentView(R.layout.widget_dialog_loading);
+        } catch (Exception | Error e) {}
         customProgressDialog.setCancelable(cancelable);
         return customProgressDialog;
     }
@@ -81,7 +83,7 @@ public class CustomProgressDialog extends Dialog {
             }
             try {
                 customProgressDialog.show();
-            } catch (Exception e) {
+            } catch (Exception | Error e) {
                 L.e(LibConfig.LOG, "CustomProgressDialog show Exception", e);
             }
         }
@@ -95,7 +97,7 @@ public class CustomProgressDialog extends Dialog {
             if (customProgressDialog != null && customProgressDialog.isShowing()) {
                 customProgressDialog.dismiss();
             }
-        } catch (Exception e) {
+        } catch (Exception | Error e) {
             L.e(LibConfig.LOG, "CustomProgressDialog hide Exception.", e);
         } finally {
             customProgressDialog = null;
