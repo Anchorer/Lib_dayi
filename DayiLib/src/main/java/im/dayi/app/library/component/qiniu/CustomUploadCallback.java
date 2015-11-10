@@ -1,4 +1,4 @@
-package im.dayi.app.library.module.qiniu;
+package im.dayi.app.library.component.qiniu;
 
 import com.alibaba.fastjson.JSONArray;
 

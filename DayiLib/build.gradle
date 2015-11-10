@@ -9,7 +9,7 @@ repositories {
 }
 
 // Library version used when deploying the artifact
-version = "0.2.3"
+version = "0.2.4"
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"

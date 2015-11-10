@@ -7,5 +7,5 @@ public class LibConfig {
     /**
      * LOG
      */
-    public static final String LOG = "DYJ";
+    public static final String LOG = "DYJ_LIB";
 }
